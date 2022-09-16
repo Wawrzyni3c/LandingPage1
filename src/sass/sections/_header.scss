@@ -1,0 +1,122 @@
+body > header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    min-height: 100px;
+
+    .specrow{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-image{
+        display: flex;
+        align-items: center;
+    }
+
+    nav{
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            margin-left: 5vw;
+            li{
+                padding: 0 1rem;
+                &:hover{
+                    cursor: pointer;
+                    color: $maincolor;
+                    font-weight: 900;
+                }
+            }
+            
+        }
+    }
+
+    .language-select-container{
+        display: flex;
+        height: 2rem;
+        align-items: center;
+        justify-content: flex-end;
+        
+        .select-element{
+            position: relative;
+            display: flex;
+            min-width: 75px;
+            height: 2rem;
+            border-radius: 5px;
+            border: 1px solid grey;
+            box-sizing: border-box;
+
+            .country-flag{
+                display: flex;
+                height: 100%;
+                width: 35px;
+                img{
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            .select-current{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 5px;
+                box-sizing: border-box;
+                height: 100%;
+                width: 100%;
+
+            }
+
+            .select-overlay{
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                min-width: 75px;
+                height: auto;
+                background-color: white;
+                z-index: 1;
+                border-radius: 5px;
+                border: 2px solid grey;
+                opacity: 0;
+                // transition: opacity 2s ease;
+                // animation: latam 5s infinite;
+                &.active{
+                    opacity: 1;
+                    display: flex;
+                    flex-direction: column;
+                    // transition: opacity 2s ease;
+                }
+    
+                .select-option{
+                    height: 1.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    display: flex;
+                    background-size: cover;
+                    padding: 10px 5px;
+                    border-bottom: 1px solid black;
+
+                    &:last-child{
+                        border-bottom: none;
+                    }
+    
+                }
+    
+            }
+        }
+
+    }
+}
+
+@keyframes latam {
+    0%   {top: 0px;}
+    25%  {top: 200px;}
+    50%  {top: 100px;}
+    75%  {top: 200px;}
+    100% {top: 0px;}
+  }

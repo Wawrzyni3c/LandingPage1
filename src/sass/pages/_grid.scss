@@ -1,0 +1,63 @@
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.specrow{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 16.25vw;
+    flex: 100%;
+}
+
+[class*="col-"] {
+    display: inline-flex;
+    box-sizing: border-box;
+  }
+
+@media (max-width: 768px){
+    @for $i from 1 through 12 {
+        .col-mobile-#{$i} {
+            width: calc(8.333333% * #{$i});
+            flex: calc(8.333333% * #{$i});
+        }
+    }
+}
+@media (min-width: 769px) and (max-height: 1024px){
+    @for $i from 1 through 12 {
+        .col-tablet-#{$i} {
+            width: calc(8.333333% * #{$i});
+            flex: calc(8.333333% * #{$i});
+        }
+    }
+}
+
+// @for $i from 1 through 12 {
+//     .col-md-#{$i} {
+//         width: calc(8.333333% * #{$i});
+//         flex: calc(8.333333% * #{$i});
+//     }
+// }
+@media (min-width: 1025px){
+    @for $i from 1 through 12 {
+        .col-desktop-#{$i} {
+            width: calc(8.333333% * #{$i});
+            flex: calc(8.333333% * #{$i});
+        }
+    }
+}
+@media (min-width: 1025px){
+    @for $i from 1 through 10 {
+        .colspec-desktop-#{$i} {
+            width: calc(10% * #{$i});
+            flex: calc(10% * #{$i});
+        }
+    }
+}
+// @for $i from 1 through 12 {
+//     .col-xl-#{$i} {
+//         width: calc(8.333333% * #{$i});
+//         flex: calc(8.333333% * #{$i});
+//     }
+// }

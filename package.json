@@ -1,0 +1,41 @@
+{
+  "name": "RecProc",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "npm-run-all test:*",
+    "test:html": "globstar nu-html-checker src/*.html",
+    "init-project": "npm install && npm-run-all init:*",
+    "init:dirs": "mkdirp src src/sass src/sass/components src/sass/pages src/sass/sections src/css src/vendor src/images src/js",
+    "init:files": "touch README.md src/index.html src/sass/style.scss src/sass/_normalize.scss src/sass/_variables.scss src/sass/_mixins.scss src/sass/pages/_general.scss src/sass/pages/_media-queries.scss src/sass/pages/_grid.scss  src/sass/components/_buttons.scss src/sass/components/_text.scss src/sass/components/_sections.scss src/sass/sections/_header.scss src/sass/sections/_footer.scss src/sass/sections/_nav.scss src/js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "build": "npm-run-all build:* test",
+    "build:clean": "rimraf src/css/*.css ",
+    "build:sass": "node-sass --output-style compact -o src/css src/sass",
+    "build:autoprefixer": "globstar autoprefixer-cli src/css/*.css",
+    "build-dev:sass": "node-sass --output-style expanded --source-map true -o src/css src/scss --watch",
+    "watch": "npm-run-all build -p watch:*",
+    "watch:sass": " node-sass --output-style expanded --source-map true -o src/css src/sass --watch",
+    "watch:autoprefixer": "globstar autoprefixer-cli src/css/*.css",
+    "watch:sassprefixer": "onchange -d 100 src/sass -- npm-run-all watch:sass watch:autoprefixer",
+    "watch:browsersync": "browser-sync start --server --index src/index.html --files src/css/*.css src/*.html"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "globstar": "^1.0.0",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "nu-html-checker": "^0.1.0",
+    "onchange": "^5.2.0",
+    "rimraf": "^2.6.3"
+  },
+  "description": "",
+  "dependencies": {
+    "browser-sync": "^2.26.14",
+    "svg-country-flags": "^1.2.10"
+  }
+}

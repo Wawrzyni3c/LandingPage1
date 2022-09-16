@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "products-tails.css",
+	"sources": [
+		"../../sass/sections/products-tails.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,uBAAuB,CAAA;EACnB,gBAAgB,EAAE,IAAI;EACtB,MAAM,EAAE,IAAI;CACf"
+}

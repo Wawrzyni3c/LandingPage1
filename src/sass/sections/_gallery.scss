@@ -1,0 +1,21 @@
+#section-gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr ;
+    .image{
+        display: flex;
+        &:first-child{
+            
+            grid-column: 1 / span 2;
+        }
+        &:last-child{
+            grid-column: 3 / span 2;
+        }
+    }
+    img{
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+
+    }
+}
